@@ -23,7 +23,7 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   const [saved, setSaved] = useState<Workout[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
-  // Load from localStorage on first mount
+  
   useEffect(() => {
     const storedPlan = localStorage.getItem("fitlog_plan");
     const storedSaved = localStorage.getItem("fitlog_saved");
@@ -32,7 +32,7 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     setHydrated(true);
   }, []);
 
-  // Save to localStorage whenever plan/saved changes (after initial hydration)
+
   useEffect(() => {
     if (hydrated) localStorage.setItem("fitlog_plan", JSON.stringify(plan));
   }, [plan, hydrated]);

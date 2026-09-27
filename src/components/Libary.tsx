@@ -1,5 +1,6 @@
 import { getAllWorkouts } from "@/lib/api";
 import WorkoutCard from "./WorkoutCard";
+import LibraryGrid from "./LibaryGrid";
 
 export default async function Library() {
   const workouts = await getAllWorkouts();
@@ -13,11 +14,8 @@ export default async function Library() {
         Twelve lifts covering every major muscle group.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {workouts.map((workout) => (
-          <WorkoutCard key={workout.id} workout={workout} />
-        ))}
-      </div>
+      <LibraryGrid workouts={workouts} />
+
     </section>
   );
 }

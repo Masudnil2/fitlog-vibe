@@ -4,6 +4,7 @@ import "./globals.css";
 import { PlanProvider } from "@/lib/PlanContext";
 import Navbar from "@/components/Navbar";
 import { ToastContainer } from "react-toastify";
+import Footer from "@/components/Footer";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <PlanProvider>
           <Navbar />
           {children}
+          <Footer/>
           <ToastContainer theme="dark" position="bottom-center" />
         </PlanProvider>
       </body>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import { PlanProvider } from "@/lib/PlanContext";
+import Navbar from "@/components/Navbar";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${oswald.variable} ${inter.variable} font-sans antialiased`}>
         <PlanProvider>
+          <Navbar />
           {children}
         </PlanProvider>
       </body>

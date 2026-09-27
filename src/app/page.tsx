@@ -1,12 +1,12 @@
 import Hero from "@/components/Hero";
+import Library from "@/components/Libary";
+
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <section id="library" className="min-h-screen px-6 py-16">
-       
-      </section>
+      <Library />
     </main>
   );
 }

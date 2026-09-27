@@ -6,10 +6,11 @@ import { usePlan } from "@/lib/PlanContext";
 import { Workout } from "@/lib/types";
 
 export default function WorkoutActions({ workout }: { workout: Workout }) {
-  const { addToPlan, addToSaved, isInPlan, isInSaved } = usePlan();
+  const { addToPlan, addToSaved, isInPlan, isInSaved, isDone } = usePlan();
 
   const inPlan = isInPlan(workout.id);
   const inSaved = isInSaved(workout.id);
+  const done = isDone(workout.id);
 
   const handleAddToPlan = () => {
     const success = addToPlan(workout);
